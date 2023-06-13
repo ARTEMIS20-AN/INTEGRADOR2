@@ -143,24 +143,39 @@ input{
 .social i{
   margin-right: 4px;
 }
-
-
-a
-{
-    color: #080613;
-    text-decoration: none;
-
-
-}
-
-    </style>
+</style>
 </head>
 <body>
     <div class="background">
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
+    <style>
+        body {
+          background-image: url("img/ninos-en-la-escuela.jpg");
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      </style>
+
+<style>
+    .show-password-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .show-password-checkbox {
+      
+        transform: scale(0.5);
+    }
+
+    .show-password-label {
+        font-size: 12px;
+    }
+</style>
+
     <form>
+        
         <h3>Login Here</h3>
 
         <label for="username">Username</label>
@@ -168,13 +183,26 @@ a
 
         <label for="password">Password</label>
         <input type="password" placeholder="Password" id="password">
+        
+        <div class="show-password-container">
+            <input type="checkbox" id="show-password" class="show-password-checkbox">
+            <label class="show-password-label" for="show-password">Mostrar contraseña</label>
+        </div>
+        
+        <script>
+            const passwordInput = document.getElementById('password');
+            const showPasswordCheckbox = document.getElementById('show-password');
+        
+            showPasswordCheckbox.addEventListener('change', function () {
+                if (this.checked) {
+                    passwordInput.type = 'text';
+                } else {
+                    passwordInput.type = 'password';
+                }
+            });
+        </script>
 
-        <div class="button">
-            <a href="admi.html">Log In</a>
-          </div>
-          
-          
-          
+        <a href="admi.html">Log In</a>
 
         <div class="social">
           <div class="go"><i class="fab fa-google"></i>  Google</div>
